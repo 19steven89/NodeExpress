@@ -8,12 +8,10 @@
   <title>About Page</title>
 </head>
 <body>
-<h1>{{pageTitle}}</h1>
-
+{{> header}}
 <p>Example html page using node.js to store page on web server port 3000</p>
-
-<!-- dynamically adjust the year using the currentYear: new Date().getFullYear()
-from the server.js file. **the below is handlebars syntax**  -->
-<footer><p>&copy Steven Barry {{currentYear}}</p></footer>
+<!-- dynamically allocates the footer from the footer.hbs file
+this way the footer does not have to be duplicated in every file-->
+{{> footer}}
 </body>
 </html>

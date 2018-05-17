@@ -8,11 +8,12 @@
   <title>Home Page</title>
 </head>
 <body>
-<h1>{{pageTitle}}</h1>
-<p>{{welcomeMsg}}</p>
-<!-- dynamically adjust the year using the currentYear: new Date().getFullYear()
-from the server.js file. **the below is handlebars syntax**  -->
-<footer><p>&copy Steven Barry {{currentYear}}</p></footer>
+<!--references the header.hbs file to dynamically allocate the h1-->
+{{> header}}
+<p>{{screamIt welcomeMsg}}</p>
+<!-- dynamically allocates the footer from the footer.hbs file
+this way the footer does not have to be duplicated in every file-->
+{{> footer}}
 </body>
 </html>
 

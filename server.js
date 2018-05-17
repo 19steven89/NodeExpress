@@ -2,18 +2,28 @@
 
 //installed npm express, using: npm install express@4.16.0 --save
 //Express is used for apps on servers that can listen for requests from clients
+
+// run: nodemon server.js -e js, hbs this will get nodemon to updats the js and hbs files
+//when running
+
 const express = require("express");
 const hbs = require("hbs");
 
 var app = express();
-
+hbs.registerPartials(__dirname + "/views/partials");
 app.set("view engine", "hbs");
-
 
 //make the /public/help.html page available to the server
 //Enter: http://localhost:3000/help.html in the url to view the page
 app.use(express.static(__dirname + "/public"));
 
+hbs.registerHelper("getCurrentYear", () => {
+  return new Date().getFullYear();
+});
+
+hbs.registerHelper("screamIt", (text) => {
+  return text.toUpperCase();
+});
 
 //this allows us to set up handler for http request, and could resond by sending the
 //html page
@@ -23,7 +33,6 @@ app.get("/home", (request, response) => {
   //render the home page so the data can be changed dynamically in home.hbs using node handlebars
   response.render("home.hbs", {
     pageTitle: "Home Page",
-    currentYear: new Date().getFullYear(),
     welcomeMsg: "Welcome to Node Express!!"
   });
 });
@@ -32,7 +41,6 @@ app.get("/home", (request, response) => {
 app.get("/about", (request, response) => {
   response.render("about.hbs", {
     pageTitle: "About Page",
-    currentYear: new Date().getFullYear()
   });
 });
 
