@@ -81,7 +81,6 @@ app.get("/bad", (request, response) => {
   });
 });
 
-
 //3000 is the port number
 app.listen(port, () => {
   console.log(`Server is up on port ${port}`);
