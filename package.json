@@ -12,5 +12,8 @@
   "dependencies": {
     "express": "^4.16.0",
     "hbs": "^4.0.1"
+  },
+  "engines": {
+    "node": "9.11.1"
   }
 }
