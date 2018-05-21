@@ -44,7 +44,7 @@ app.use((request, response, next) => {
 
 //make the /public/help.html page available to the server
 //Enter: http://localhost:3000/help.html in the url to view the page
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + '/public'));
 
 //used in the footer.hbs file to dynamically adjust the year in the footer
 hbs.registerHelper("getCurrentYear", () => {
