@@ -1,0 +1,9 @@
+commands for creaeing heroku URL for app to be deployed on server:
+
+installed heroku with command: curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+
+then use command heroku create
+
+followed by "git push heroku master" to push the files to the server
+
+then heroku open which will open the application with the allocated url from heroku
