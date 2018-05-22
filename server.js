@@ -81,7 +81,13 @@ app.get("/home", (request, response) => {
 //using localhost:3000/about in the browser URL it will present the content below!
 app.get("/about", (request, response) => {
   response.render("about.hbs", {
-    pageTitle: "About Page",
+    pageTitle: "About Page"
+  });
+});
+
+app.get("/projects", (request, response) => {
+  response.render("projects.hbs", {
+    pageTitle: "Projects View Page"
   });
 });
 
