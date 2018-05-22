@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.0",
+    "app-root-path": "^2.0.1",
+    "express": "^4.16.3",
     "hbs": "^4.0.1"
   },
   "engines": {

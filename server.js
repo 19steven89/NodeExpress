@@ -56,6 +56,16 @@ hbs.registerHelper("screamIt", (text) => {
   return text.toUpperCase();
 });
 
+//rendered the root file which is home.hbs
+app.get("/", (request, response) => {
+  // response.send("<h1>Hello Express!</h1>");
+  //render the home page so the data can be changed dynamically in home.hbs using node handlebars
+  response.render("home.hbs", {
+    pageTitle: "Home Page",
+    welcomeMsg: "Welcome to Node Express!!"
+  });
+});
+
 //this allows us to set up handler for http request, and could resond by sending the
 //html page
 // here "/" is the root of the app, 2nd param is the arrow function
